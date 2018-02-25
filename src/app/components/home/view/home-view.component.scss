@@ -1,0 +1,10 @@
+#slider {
+  height: 600px;
+  width: 100%;
+  .slide {
+    height: 700px;
+    width: 100%;
+    background-image: url('/assets/img/slider-img-01.jpg');
+    background-size: cover;
+  }
+}

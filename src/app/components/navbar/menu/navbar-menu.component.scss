@@ -15,6 +15,7 @@
   }
 
   #logo-container {
+    cursor: pointer;
     height: 20px;
     width: 200px;
     margin-left: 20px;
@@ -66,25 +67,29 @@
         background: none;
 
         &:before {
-          border-bottom: 2px solid $primary-grey;;
+          border-bottom: 2px solid $primary-white;
           content: '';
           height: 2px;
           position: absolute;
           bottom: 15px;
           right: calc(100% - 10px);
           transition: right 0.5s ease;
-          left: 12px;
+          left: 15px;
         }
 
         a {
-          color: $primary-grey;
+          color: $primary-white;
         }
 
         &:hover {
           background: none;
 
+          a {
+            color: $primary-white;
+          }
+
           &:before {
-            right: 12px;
+            right: 15px;
           }
         }
       }
@@ -116,9 +121,12 @@
     }
   }
 
-
   @media(min-width: $screen-lg) {
-    background: rgba(53, 68, 78, 0);
-    border-bottom: 1px solid $primary-grey;
+    background: rgba(53, 68, 78, .0);
+    background-image:
+    linear-gradient(
+      to bottom,
+      rgba(53, 68, 78, .9), rgba(53, 68, 78, 0)
+    );
   }
 }
