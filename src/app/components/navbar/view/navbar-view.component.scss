@@ -1,4 +1,5 @@
 #navbar-view {
+  background: rgba(53, 68, 78, .9);
   position: absolute;
   top: 0;
   left: 0;
@@ -6,9 +7,15 @@
 
   nav {
     align-items: center;
-    background: rgba(53, 68, 78, .9);
     display: flex;
     height: 60px;
+    justify-content: space-between;
+
+    @media(min-width: $screen-lg) {
+      height: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
   }
 
   #logo-container {
@@ -19,12 +26,48 @@
     background-position: left middle;
     background-image: url('/assets/img/logo.svg');
     background-repeat: no-repeat;
+
+    @media(min-width: $screen-lg) {
+      height: 30px;
+    }
   }
 
   #menu {
+    background: rgba(53, 68, 78, .9);
+    border-bottom: 2px solid rgba(53, 68, 78, .9);
+    border-top: 2px solid #CCC;
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    list-style: none;
     top: 60px;
-    left: -100%;
+    width: 100%;
+    left: 0%;
+
+    @media(min-width: $screen-lg) {
+      flex-direction: row;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  #menu li {
+    color: $primary-white;
+    padding: 15px;
+    transition: 0.3s ease all;
+
+    a {
+      color: $primary-white;
+    }
+
+    &:hover {
+      background: $primary-white;
+
+      a {
+        color: rgba(53, 68, 78, .9);
+      }
+    }
   }
 
   #menu-toggle-container {
@@ -32,5 +75,14 @@
     padding: 20px;
     position: absolute;
     right: 0;
+
+    @media(min-width: $screen-lg) {
+      display: none;
+    }
+  }
+
+  @media(min-width: $screen-lg) {
+    background: rgba(53, 68, 78, 0);
+    border-bottom: 1px solid $primary-grey;
   }
 }
