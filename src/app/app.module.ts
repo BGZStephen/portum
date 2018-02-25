@@ -6,12 +6,14 @@ import { AppRoutes } from './app.routes';
 
 
 import * as components from 'app/components/components-barrel';
+import { NavbarViewComponent } from './components/navbar/view/navbar-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     components.HomeViewComponent,
-    components.ViewWrapperComponent
+    components.ViewWrapperComponent,
+    NavbarViewComponent
   ],
   imports: [
     BrowserModule,

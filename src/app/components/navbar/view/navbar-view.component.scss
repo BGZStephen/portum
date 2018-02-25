@@ -1,0 +1,36 @@
+#navbar-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  nav {
+    align-items: center;
+    background: rgba(53, 68, 78, .9);
+    display: flex;
+    height: 60px;
+  }
+
+  #logo-container {
+    height: 20px;
+    width: 200px;
+    margin-left: 20px;
+    background-size: contain;
+    background-position: left middle;
+    background-image: url('/assets/img/logo.svg');
+    background-repeat: no-repeat;
+  }
+
+  #menu {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+  }
+
+  #menu-toggle-container {
+    color: white;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+  }
+}

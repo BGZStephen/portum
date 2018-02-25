@@ -2,6 +2,8 @@
 @import './elements/main';
 @import './layout/main';
 
+@import '../app/components/navbar/view/navbar-view.component';
+
 * {
   box-sizing: border-box;
   margin: 0;
