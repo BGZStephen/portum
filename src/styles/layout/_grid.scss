@@ -1,0 +1,67 @@
+$grid-columns: 12;
+$grid-column-y-padding: 10px;
+$grid-column-x-padding: 5px;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  width: 100%;
+}
+
+.col {
+  padding: $grid-column-y-padding $grid-column-x-padding;
+  &:first-of-type {
+    padding-left: $grid-column-x-padding * 2;
+  }
+
+  &:last-of-type {
+    padding-right: $grid-column-x-padding * 2;
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: calc((100% / 12) * $i)
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-xs-#{$i} {
+    width: 100%;
+  }
+
+  @media(min-width: $screen-xs) {
+    width: calc((100% / 12) * $i)
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-sm-#{$i} {
+    width: 100%;
+  }
+
+  @media(min-width: $screen-sm) {
+    width: calc((100% / 12) * $i)
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-md-#{$i} {
+    width: 100%;
+  }
+
+  @media(min-width: $screen-md) {
+    width: calc((100% / 12) * $i)
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-lg-#{$i} {
+    width: 100%;
+  }
+
+  @media(min-width: $screen-lg) {
+    width: calc((100% / 12) * $i)
+  }
+}
