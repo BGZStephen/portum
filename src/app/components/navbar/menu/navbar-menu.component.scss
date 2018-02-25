@@ -1,0 +1,91 @@
+#navbar-menu {
+  background: rgba(53, 68, 78, .9);
+
+  nav {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+
+    @media(min-width: $screen-lg) {
+      height: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  #logo-container {
+    height: 20px;
+    width: 200px;
+    margin-left: 20px;
+    background-size: contain;
+    background-image: url('/assets/img/logo.svg');
+    background-repeat: no-repeat;
+
+    @media(min-width: $screen-lg) {
+      height: 30px;
+    }
+  }
+
+  #menu {
+    border-bottom: 2px solid rgba(53, 68, 78, .9);
+    border-top: 2px solid #CCC;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    list-style: none;
+    top: 60px;
+    width: 100%;
+    left: 0%;
+
+    li {
+      background: rgba(53, 68, 78, .9);
+      color: $primary-white;
+      padding: 15px;
+      transition: 0.3s ease all;
+
+      a {
+        color: $primary-white;
+      }
+
+      &:hover {
+        background: $primary-white;
+
+        a {
+          color: rgba(53, 68, 78, .9);
+        }
+      }
+
+      @media(min-width: $screen-lg) {
+        transition: none;
+        background: none;
+      }
+    }
+
+    @media(min-width: $screen-lg) {
+      border: none;
+      flex-direction: row;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+
+
+  #menu-toggle-container {
+    color: white;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+
+    @media(min-width: $screen-lg) {
+      display: none;
+    }
+  }
+
+
+  @media(min-width: $screen-lg) {
+    background: rgba(53, 68, 78, 0);
+    border-bottom: 1px solid $primary-grey;
+  }
+}

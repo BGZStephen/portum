@@ -4,16 +4,15 @@ import { AppComponent } from './app.component';
 
 import { AppRoutes } from './app.routes';
 
-
 import * as components from 'app/components/components-barrel';
-import { NavbarViewComponent } from './components/navbar/view/navbar-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     components.HomeViewComponent,
     components.ViewWrapperComponent,
-    NavbarViewComponent
+    components.NavbarViewComponent,
+    components.NavbarMenuComponent
   ],
   imports: [
     BrowserModule,
