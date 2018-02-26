@@ -5,8 +5,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home-view.component.html',
 })
 export class HomeViewComponent implements OnInit {
+  carouselOptions: object;
 
-  constructor() { }
+  constructor(
+  ) {
+    this.carouselOptions = {
+      slides: [
+        {
+          image: '/assets/img/slider-img-01.jpg'
+        },
+        {
+          image: '/assets/img/slider-img-02.jpg'
+        },
+        {
+          image: '/assets/img/slider-img-03.jpg'
+        },
+      ]
+    }
+  }
 
   ngOnInit() {
   }

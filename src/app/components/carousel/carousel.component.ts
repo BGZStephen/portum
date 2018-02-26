@@ -23,11 +23,13 @@ interface Slide {
 })
 export class CarouselComponent implements OnInit {
   @Input() options: Options;
+  validators: object;
+  animations: object;
+  currentSlide: number;
+  slideContainerWidth: string;
+  slideWidth: string;
 
-  constructor(
-    private validators: object,
-    private animations: object,
-  ) {
+  constructor() {
     this.validators = {
       height: this.validateHeight,
       width: this.validateWidth,
@@ -41,10 +43,40 @@ export class CarouselComponent implements OnInit {
       slide: () => null,
       fade: () => null,
     }
+
+    this.currentSlide = 0;
   }
 
   ngOnInit() {
     this.validateOptions();
+    this.initSlideContainer();
+    this.initSlides();
+
+    setInterval(this.animateSlide, this.options.animationSpeed || 10000)
+  }
+
+  animateSlide =() => {
+    this.nextSlide();
+  }
+
+  initSlideContainer() {
+    this.slideContainerWidth = `${100 * this.options.slides.length}%`
+  }
+
+  initSlides() {
+    this.slideWidth = `${100 / this.options.slides.length}%`
+  }
+
+  nextSlide() {
+    this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
+  }
+
+  slideContainerStyle() {
+    return {'width': this.slideContainerWidth, 'left': `-${this.currentSlide * 100}%`}
+  }
+
+  slidesStyle() {
+    return {'width': this.slideWidth}
   }
 
   validateOptions() {
@@ -87,7 +119,7 @@ export class CarouselComponent implements OnInit {
     }
   }
 
-  validateSlides() {
+  validateSlides = () => {
     if (!Array.isArray(this.options.slides)) {
       throw new Error('Please provide slides as an array');
     }

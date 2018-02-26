@@ -1,7 +1,7 @@
 <div id="carousel">
-  <div class="slides-container">
-    <div class="slide" *ngFor="let slide of options.slides">
-      TEST
+  <div class="slides-container" [ngStyle]="slideContainerStyle()">
+    <div class="slide" *ngFor="let slide of options.slides" [ngStyle]="slidesStyle()">
+      <img src="{{slide.image}}">
     </div>
   </div>
 </div>
