@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 
 import * as components from 'app/components/components-barrel';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import * as components from 'app/components/components-barrel';
     components.HomeViewComponent,
     components.ViewWrapperComponent,
     components.NavbarViewComponent,
-    components.NavbarMenuComponent
+    components.NavbarMenuComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
