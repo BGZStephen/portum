@@ -1,3 +1,6 @@
+// TODO
+// unique carousel id on init, assign to id and store as variable for class assignment
+
 import { Component, OnInit, Input } from '@angular/core';
 
 interface Options {
@@ -49,37 +52,44 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit() {
     this.validateOptions();
+    this.initCarousel();
     this.initSlideContainer();
     this.initSlides();
 
     setInterval(this.animateSlide, this.options.animationSpeed || 10000)
   }
 
-  animateSlide =() => {
-    this.nextSlide();
+  initCarousel = () => {
+    const carousel = document.getElementById('carousel')
+    carousel.style.width = `${this.options.width}px` || '100vw';
+    carousel.style.height = `${this.options.height}px` || '100vh';
   }
 
-  initSlideContainer() {
+  initSlideContainer = () => {
     this.slideContainerWidth = `${100 * this.options.slides.length}%`
   }
 
-  initSlides() {
+  initSlides = () => {
     this.slideWidth = `${100 / this.options.slides.length}%`
   }
 
-  nextSlide() {
-    this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
-  }
-
-  slideContainerStyle() {
+  slideContainerStyle = () => {
     return {'width': this.slideContainerWidth, 'left': `-${this.currentSlide * 100}%`}
   }
 
-  slidesStyle() {
+  slidesStyle = () => {
     return {'width': this.slideWidth}
   }
 
-  validateOptions() {
+  animateSlide = () => {
+    this.nextSlide();
+  }
+
+  nextSlide = () => {
+    this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
+  }
+
+  validateOptions = () => {
     if (!this.options) {
       throw new Error('Please provide an options configuration object to the carousel component');
     }
@@ -89,31 +99,31 @@ export class CarouselComponent implements OnInit {
     }
   }
 
-  validateHeight() {
+  validateHeight = () => {
     if (typeof this.options.height !== 'number') {
       throw new Error('Height must be a number');
     }
   }
 
-  validateWidth() {
+  validateWidth = () => {
     if (typeof this.options.width !== 'number') {
       throw new Error('Width must be a number');
     }
   }
 
-  validateAnimation() {
+  validateAnimation = () => {
     if (!this.animations[this.options.animation]) {
       throw new Error('Invalid animation');
     }
   }
 
-  validateAnimationSpeed() {
+  validateAnimationSpeed = () => {
     if (typeof this.options.animationSpeed !== 'number') {
       throw new Error('Animation speed must be a number');
     }
   }
 
-  validateDelayActive() {
+  validateDelayActive = () => {
     if (typeof this.options.delayActive !== 'boolean') {
       throw new Error('Delay active must be either true or false boolean values');
     }
@@ -124,8 +134,4 @@ export class CarouselComponent implements OnInit {
       throw new Error('Please provide slides as an array');
     }
   }
-
-  // add left 100% per slide in the carousel
-  // at the end of the carousel, find a graceful way of restarting
-
 }
