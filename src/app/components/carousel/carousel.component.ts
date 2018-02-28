@@ -1,7 +1,4 @@
-// TODO
-// unique carousel id on init, assign to id and store as variable for class assignment
-
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 
 interface Options {
   height?: number,
@@ -24,13 +21,14 @@ interface Slide {
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, AfterViewInit {
   @Input() options: Options;
   validators: object;
   animations: object;
   currentSlide: number;
   slideContainerWidth: string;
   slideWidth: string;
+  id: string;
 
   constructor() {
     this.validators = {
@@ -51,16 +49,23 @@ export class CarouselComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.id = this.generateId();
     this.validateOptions();
+  }
+
+  ngAfterViewInit() {
     this.initCarousel();
     this.initSlideContainer();
     this.initSlides();
-
     setInterval(this.animateSlide, this.options.animationSpeed || 10000)
   }
 
+  generateId = () => {
+    return String(((Math.random() * 10) * new Date().getTime())).slice(0, 4);
+  }
+
   initCarousel = () => {
-    const carousel = document.getElementById('carousel')
+    const carousel = document.getElementById(`carousel-${this.id}`)
     carousel.style.width = `${this.options.width}px` || '100vw';
     carousel.style.height = `${this.options.height}px` || '100vh';
   }
