@@ -51,12 +51,12 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.id = this.generateId();
     this.validateOptions();
+    this.initSlideContainer();
+    this.initSlides();
   }
 
   ngAfterViewInit() {
     this.initCarousel();
-    this.initSlideContainer();
-    this.initSlides();
     setInterval(this.animateSlide, this.options.animationSpeed || 10000)
   }
 
@@ -66,8 +66,8 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   initCarousel = () => {
     const carousel = document.getElementById(`carousel-${this.id}`)
-    carousel.style.width = `${this.options.width}px` || '100vw';
-    carousel.style.height = `${this.options.height}px` || '100vh';
+    carousel.style.maxWidth = this.options.width ? `${this.options.width}px` : '100vw'
+    carousel.style.height = this.options.height ? `${this.options.height}px` : '100vh'
   }
 
   initSlideContainer = () => {
