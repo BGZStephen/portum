@@ -1,4 +1,12 @@
-import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges
+ } from '@angular/core';
 
 interface Options {
   height?: number,
@@ -19,14 +27,13 @@ interface Slide {
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit, AfterViewInit {
+export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() options: Options;
+  @Input() currentSlide: number;
   @Output() onSlideChange: EventEmitter<number> = new EventEmitter<number>();
   validators: object;
   animations: object;
-  currentSlide: number;
   slideContainerWidth: string;
   slideWidth: string;
   id: string;
@@ -45,8 +52,6 @@ export class CarouselComponent implements OnInit, AfterViewInit {
       slide: () => null,
       fade: () => null,
     }
-
-    this.currentSlide = 0;
   }
 
   ngOnInit() {
@@ -54,11 +59,19 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.validateOptions();
     this.initSlideContainer();
     this.initSlides();
+    this.nextSlide(2);
   }
 
   ngAfterViewInit() {
     this.initCarousel();
-    setInterval(this.animateSlide, this.options.animationSpeed || 10000)
+  }
+
+  ngOnChanges(changes) {
+    for (const propName in changes) {
+      if (propName === 'activeSlide') {
+        this.nextSlide(changes[propName].currentValue || 0);
+      }
+    }
   }
 
   generateId = () => {
@@ -67,8 +80,8 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   initCarousel = () => {
     const carousel = document.getElementById(`carousel-${this.id}`)
-    carousel.style.maxWidth = this.options.width ? `${this.options.width}px` : '100vw'
-    carousel.style.height = this.options.height ? `${this.options.height}px` : '100vh'
+    carousel.style.Width = this.options.width ? `${this.options.width}px` : '100vw'
+    carousel.style.height = this.options.height ? `${this.options.height}px` : 'auto'
   }
 
   initSlideContainer = () => {
@@ -87,13 +100,18 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     return {'width': this.slideWidth}
   }
 
-  animateSlide = () => {
+  animateSlide = (index) => {
     this.nextSlide();
     this.onSlideChange.emit(this.currentSlide);
   }
 
-  nextSlide = () => {
-    this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
+  nextSlide = (index) => {
+    setTimeout(this.animateSlide, this.options.animationSpeed || 10000)
+    if (index) {
+      this.currentSlide = index;
+    } else {
+      this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
+    }
   }
 
   validateOptions = () => {

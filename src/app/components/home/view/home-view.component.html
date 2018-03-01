@@ -1,8 +1,6 @@
 <div class="content-wrapper">
-  <!-- <div id="slider">
-    <div class="slide">
+  <app-carousel (onSlideChange)="onSlideChange($event)" [currentSlide]="primaryCarouselSlide" [options]="carouselOptions"></app-carousel>
+  <div id="carousel-selector">
 
-    </div>
-  </div> -->
-  <app-carousel (onSlideChange)="onSlideChange($event)" [options]="carouselOptions"></app-carousel>
+  </div>
 </div>

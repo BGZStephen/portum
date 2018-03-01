@@ -9,7 +9,13 @@
     .slide {
       float: left;
       img {
-        width: 100%;
+        height: 400px;
+        width: auto;
+
+        @media(min-width: $screen-lg) {
+          height: auto;
+          width: 100%;
+        }
       }
     }
   }
