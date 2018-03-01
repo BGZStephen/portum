@@ -25,6 +25,11 @@ export class HomeViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+  }
+
+  onSlideChange(slideIndex) {
+
   }
 
 }

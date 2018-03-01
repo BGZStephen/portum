@@ -4,5 +4,5 @@
 
     </div>
   </div> -->
-  <app-carousel [options]="carouselOptions"></app-carousel>
+  <app-carousel (onSlideChange)="onSlideChange($event)" [options]="carouselOptions"></app-carousel>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
 interface Options {
   height?: number,
@@ -23,6 +23,7 @@ interface Slide {
 })
 export class CarouselComponent implements OnInit, AfterViewInit {
   @Input() options: Options;
+  @Output() onSlideChange: EventEmitter<number> = new EventEmitter<number>();
   validators: object;
   animations: object;
   currentSlide: number;
@@ -88,6 +89,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   animateSlide = () => {
     this.nextSlide();
+    this.onSlideChange.emit(this.currentSlide);
   }
 
   nextSlide = () => {
