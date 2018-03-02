@@ -30,8 +30,8 @@ interface Slide {
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() options: Options;
-  @Input() currentSlide: number;
   @Output() onSlideChange: EventEmitter<number> = new EventEmitter<number>();
+  currentSlide: number;
   validators: object;
   animations: object;
   slideContainerWidth: string;
@@ -80,7 +80,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
 
   initCarousel = () => {
     const carousel = document.getElementById(`carousel-${this.id}`)
-    carousel.style.Width = this.options.width ? `${this.options.width}px` : '100vw'
+    carousel.style.width = this.options.width ? `${this.options.width}px` : '100vw'
     carousel.style.height = this.options.height ? `${this.options.height}px` : 'auto'
   }
 
@@ -105,13 +105,14 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
     this.onSlideChange.emit(this.currentSlide);
   }
 
-  nextSlide = (index) => {
+  nextSlide = (index?) => {
     setTimeout(this.animateSlide, this.options.animationSpeed || 10000)
     if (index) {
       this.currentSlide = index;
     } else {
       this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
     }
+    this.onSlideChange.emit(this.currentSlide)
   }
 
   validateOptions = () => {

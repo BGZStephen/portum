@@ -1,6 +1,25 @@
-<div class="content-wrapper">
-  <app-carousel (onSlideChange)="onSlideChange($event)" [currentSlide]="primaryCarouselSlide" [options]="carouselOptions"></app-carousel>
-  <div id="carousel-selector">
-
+<div id="home-view">
+  <div class="content-wrapper">
+    <app-carousel (onSlideChange)="onSlideChange($event)" [options]="carouselOptions"></app-carousel>
+    <div id="carousel-selector">
+      <div class="selector {{activeSlide === 0 ? 'active' : ''}}">
+        <span>
+          <p class="selector-number">01</p>
+          <p>grow your business with portum</p>
+        </span>
+      </div>
+      <div class="selector {{activeSlide === 1 ? 'active' : ''}}">
+        <span>
+          <p class="selector-number">02</p>
+          <p>apogee of the business</p>
+        </span>
+      </div>
+      <div class="selector {{activeSlide === 2 ? 'active' : ''}}">
+        <span>
+          <p class="selector-number">03</p>
+          <p>maintaining the business</p>
+        </span>
+      </div>
+    </div>
   </div>
 </div>

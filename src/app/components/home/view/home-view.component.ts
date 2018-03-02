@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeViewComponent implements OnInit {
   carouselOptions: object;
-  primaryCarouselSlide: number;
+  activeSlide: number;
+
 
   constructor(
   ) {
@@ -34,7 +35,7 @@ export class HomeViewComponent implements OnInit {
   }
 
   onSlideChange(slideIndex) {
-
+    this.activeSlide = slideIndex;
   }
 
 }
