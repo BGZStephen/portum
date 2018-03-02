@@ -1,20 +1,20 @@
 <div id="home-view">
   <div class="content-wrapper">
-    <app-carousel (onSlideChange)="onSlideChange($event)" [options]="carouselOptions"></app-carousel>
+    <app-carousel (onSlideChange)="onSlideChange($event)" [slideOverride]="slideOverride" [options]="carouselOptions"></app-carousel>
     <div id="carousel-selector">
-      <div class="selector {{activeSlide === 0 ? 'active' : ''}}">
+      <div (click)="onSlideOverride(0)" class="selector {{activeSlide === 0 ? 'active' : ''}}">
         <span>
           <p class="selector-number">01</p>
           <p>grow your business with portum</p>
         </span>
       </div>
-      <div class="selector {{activeSlide === 1 ? 'active' : ''}}">
+      <div (click)="onSlideOverride(1)" class="selector {{activeSlide === 1 ? 'active' : ''}}">
         <span>
           <p class="selector-number">02</p>
           <p>apogee of the business</p>
         </span>
       </div>
-      <div class="selector {{activeSlide === 2 ? 'active' : ''}}">
+      <div (click)="onSlideOverride(2)" class="selector {{activeSlide === 2 ? 'active' : ''}}">
         <span>
           <p class="selector-number">03</p>
           <p>maintaining the business</p>

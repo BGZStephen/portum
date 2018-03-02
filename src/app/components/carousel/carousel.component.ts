@@ -31,12 +31,14 @@ interface Slide {
 export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() options: Options;
   @Output() onSlideChange: EventEmitter<number> = new EventEmitter<number>();
+  @Input() slideOverride;
   currentSlide: number;
   validators: object;
   animations: object;
   slideContainerWidth: string;
   slideWidth: string;
   id: string;
+  nextAnimationDelay: number;
 
   constructor() {
     this.validators = {
@@ -60,6 +62,8 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
     this.initSlideContainer();
     this.initSlides();
     this.nextSlide(2);
+    this.nextAnimationDelay = 10000;
+    setInterval(this.animationCountdown, 1000)
   }
 
   ngAfterViewInit() {
@@ -68,9 +72,17 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
 
   ngOnChanges(changes) {
     for (const propName in changes) {
-      if (propName === 'activeSlide') {
+      if (propName === 'slideOverride') {
         this.nextSlide(changes[propName].currentValue || 0);
       }
+    }
+  }
+
+  animationCountdown = () => {
+    console.log(this.nextAnimationDelay)
+    this.nextAnimationDelay -= 1000;
+    if (this.nextAnimationDelay <= 0) {
+      this.nextSlide();
     }
   }
 
@@ -106,8 +118,8 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   nextSlide = (index?) => {
-    setTimeout(this.animateSlide, this.options.animationSpeed || 10000)
-    if (index) {
+    this.nextAnimationDelay = 10000;
+    if (index >= 0) {
       this.currentSlide = index;
     } else {
       this.currentSlide + 1 === this.options.slides.length ? this.currentSlide = 0 : this.currentSlide += 1;
