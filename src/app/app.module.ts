@@ -9,6 +9,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeAboutComponent } from './components/home/about/home-about.component';
 import { HomeServicesComponent } from './components/home/services/home-services.component';
 import { HomePortfolioComponent } from './components/home/portfolio/home-portfolio.component';
+import { HomeTestimonialsComponent } from './components/home/testimonials/home-testimonials.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomePortfolioComponent } from './components/home/portfolio/home-portfol
     CarouselComponent,
     HomeAboutComponent,
     HomeServicesComponent,
-    HomePortfolioComponent
+    HomePortfolioComponent,
+    HomeTestimonialsComponent
   ],
   imports: [
     BrowserModule,

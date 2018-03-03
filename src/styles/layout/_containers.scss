@@ -10,6 +10,18 @@
   width: 100%;
   padding: 40px;
 
+  .section-header {
+    text-transform: uppercase;
+    color: #777;
+  }
+
+  .section-text {
+    font-size: 1.2em;
+    @media(min-width: $screen-lg) {
+      font-size: 2em;
+    }
+  }
+
   @media(min-width: $screen-lg) {
     padding: 80px;
   }

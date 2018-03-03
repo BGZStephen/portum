@@ -1,0 +1,141 @@
+#home-testimonials {
+  .section-container {
+    background: #EEE;
+    text-align: center;
+  }
+
+  .testimonials-row {
+    @media(min-width: $screen-lg) {
+      margin-bottom: 45px;
+    }
+  }
+
+  .testimonials {
+    margin: 45px auto 0 auto;
+    max-width: 1200px;
+
+    .testimonial {
+      p {
+        margin-bottom: 10px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      .testimonial-name {
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .text-container {
+        cursor: pointer;
+      }
+
+      @media(min-width: $screen-lg) {
+        padding: 20px;
+      }
+    }
+
+    .testimonial {
+      margin-bottom: 25px;
+      position: relative;
+
+      .text-container {
+        background: #F9F9F9;
+        position: relative;
+        top: 0;
+        height: 100%;
+        padding: 20px;
+
+        @media(min-width: $screen-lg) {
+          padding: 30px;
+        }
+      }
+
+      img {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+
+        @media(min-width: $screen-lg) {
+          display: block;
+        }
+      }
+    }
+
+    .testimonial-left {
+      text-align: left;
+      .text-container {
+        right: 0;
+
+        .fa-quote-left {
+          display: none;
+          color: #DDD;
+          position: absolute;
+          top: 15px;
+          left: 15px;
+
+          @media(min-width: $screen-lg) {
+            display: block;
+          }
+        }
+
+        @media(min-width: $screen-lg) {
+          padding-left: 100px;
+          margin-right: 10px;
+        }
+      }
+
+      img {
+        left: 0;
+
+        @media(min-width: $screen-lg) {
+          display: block;
+          padding-right: 60px;
+        }
+      }
+      @media(min-width: $screen-lg) {
+        padding-left: 60px;
+        text-align: right;
+      }
+    }
+
+    .testimonial-right {
+      text-align: left;
+      .text-container {
+        left: 0;
+        @media(min-width: $screen-lg) {
+          margin-left: 10px;
+          padding-right: 100px;
+        }
+      }
+
+      img {
+        right: 0;
+      }
+
+      .fa-quote-right {
+        display: none;
+        color: #DDD;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        @media(min-width: $screen-lg) {
+          display: block;
+        }
+      }
+
+      @media(min-width: $screen-lg) {
+        padding-right: 60px;
+      }
+    }
+
+    .text-container:hover {
+      background: $primary-red;
+      color: #DDD;
+    }
+  }
+}

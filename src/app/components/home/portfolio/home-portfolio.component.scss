@@ -1,18 +1,6 @@
 #home-portfolio {
   .section-container {
     text-align: center;
-
-    .section-header {
-      text-transform: uppercase;
-      color: #777;
-    }
-
-    .section-text {
-      font-size: 1.2em;
-      @media(min-width: $screen-lg) {
-        font-size: 2em;
-      }
-    }
   }
   .portfolio-items {
     .portfolio-row {
