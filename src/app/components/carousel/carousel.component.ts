@@ -68,6 +68,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
 
   ngAfterViewInit() {
     this.initCarousel();
+    this.setSlideImages();
   }
 
   ngOnChanges(changes) {
@@ -102,6 +103,16 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
 
   initSlides = () => {
     this.slideWidth = `${100 / this.options.slides.length}%`
+  }
+
+  setSlideImages = () => {
+    const carousel = document.getElementById(`carousel-${this.id}`);
+    const slides = carousel.getElementsByClassName('slide');
+    for (let i = 0; i < slides.length; i+= 1) {
+      slides[i]['style'].backgroundImage = `url(${this.options.slides[i].image})`;
+      slides[i]['style'].backgroundSize = 'cover';
+      slides[i]['style'].backgroundPosition = 'center';
+    }
   }
 
   slideContainerStyle = () => {

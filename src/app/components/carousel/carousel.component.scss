@@ -7,15 +7,17 @@
     position: relative;
     transition: 1s ease all;
     .slide {
+      background-repeat: no-repeat;
+      background-size: auto;
       float: left;
-      img {
-        height: 400px;
-        width: auto;
+      height: 350px;
 
-        @media(min-width: $screen-lg) {
-          height: auto;
-          width: 100%;
-        }
+      @media(min-width: $screen-md) {
+        height: 550px;
+      }
+
+      @media(min-width: $screen-lg) {
+        height: 750px;
       }
     }
   }
