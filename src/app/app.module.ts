@@ -10,6 +10,7 @@ import { HomeAboutComponent } from './components/home/about/home-about.component
 import { HomeServicesComponent } from './components/home/services/home-services.component';
 import { HomePortfolioComponent } from './components/home/portfolio/home-portfolio.component';
 import { HomeTestimonialsComponent } from './components/home/testimonials/home-testimonials.component';
+import { HomeExpertiseComponent } from './components/home/expertise/home-expertise.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeTestimonialsComponent } from './components/home/testimonials/home-t
     HomeAboutComponent,
     HomeServicesComponent,
     HomePortfolioComponent,
-    HomeTestimonialsComponent
+    HomeTestimonialsComponent,
+    HomeExpertiseComponent
   ],
   imports: [
     BrowserModule,
