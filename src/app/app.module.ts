@@ -6,6 +6,7 @@ import { AppRoutes } from './app.routes';
 
 import * as components from 'app/components/components-barrel';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { HomeAboutComponent } from './components/home/about/home-about.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     components.ViewWrapperComponent,
     components.NavbarViewComponent,
     components.NavbarMenuComponent,
-    CarouselComponent
+    CarouselComponent,
+    HomeAboutComponent
   ],
   imports: [
     BrowserModule,

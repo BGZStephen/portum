@@ -5,3 +5,12 @@
 .content-container.horizontal {
   flex-direction: column;
 }
+
+.section-container {
+  width: 100%;
+  padding: 40px;
+
+  @media(min-width: $screen-lg) {
+    padding: 80px;
+  }
+}
