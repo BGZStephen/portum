@@ -19,6 +19,7 @@ interface Options {
 
 interface Slide {
   image?: string,
+  header?: string,
   content?: string,
   contentClass?: string,
   contentActiveClass?: string

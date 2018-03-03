@@ -14,13 +14,19 @@ export class HomeViewComponent implements OnInit {
     this.carouselOptions = {
       slides: [
         {
-          image: '/assets/img/slider-img-01.jpg'
+          image: '/assets/img/slider-img-01.jpg',
+          header: 'Grow your business with portum',
+          content: 'From zero to hero along with you'
         },
         {
-          image: '/assets/img/slider-img-02.jpg'
+          image: '/assets/img/slider-img-02.jpg',
+          header: 'Apogee of the business',
+          content: 'From zero to hero along with you'
         },
         {
-          image: '/assets/img/slider-img-03.jpg'
+          image: '/assets/img/slider-img-03.jpg',
+          header: 'Maintaining the business',
+          content: 'Keep your time, grow your business'
         },
       ]
     }
@@ -36,7 +42,6 @@ export class HomeViewComponent implements OnInit {
 
   onSlideChange(slideIndex) {
     this.activeSlide = slideIndex;
-    console.log(slideIndex)
   }
 
 }
