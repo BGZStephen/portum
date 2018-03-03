@@ -1,0 +1,98 @@
+#home-services {
+  .services-section {
+    background-image: url('/assets/img/02_services.jpg');
+    background-size: contain;
+    padding: 30px;
+
+    .section-content {
+      margin: 0 auto;
+      max-width: 1100px;
+
+      .left-content,
+      .right-content {
+        color: white;
+        padding: 20px;
+      }
+
+      .left-content {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        .services-header {
+          color: #CCC;
+          font-size: 1em;
+          text-transform: uppercase;
+        }
+
+        .services-text {
+          font-weight: 300;
+          font-size: 2em;
+        }
+
+        @media(min-width: $screen-lg) {
+          align-items: flex-end;
+
+          .services-header {
+            font-size: 0.8em;
+          }
+        }
+      }
+
+      .right-content {
+        .services {
+          display: flex;
+          flex-wrap: wrap;
+
+          .service {
+            cursor: pointer;
+            padding: 30px;
+
+            i {
+              margin-bottom: 25px;
+              position: relative;
+              transition: 0.3s ease all;
+
+              &::after {
+                content: '';
+                border-left: 2px solid rgba(255, 255, 255, 0.15);
+                left: -20px;
+                height: 100%;
+                position: absolute;
+              }
+            }
+
+            .service-title {
+              color: $primary-blue;
+              margin-bottom: 5px;
+              text-transform: uppercase;
+              transition: 0.3s ease all;
+            }
+
+            .service-text {
+              letter-spacing: 0.1em;
+            }
+
+            &:hover {
+              i {
+                &::after {
+                  content: '';
+                  border-left: 2px solid $primary-red;
+                  left: -20px;
+                  height: 100%;
+                  position: absolute;
+                }
+              }
+
+              i,
+              .service-title {
+                color: $primary-red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
