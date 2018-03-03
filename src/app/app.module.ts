@@ -8,6 +8,7 @@ import * as components from 'app/components/components-barrel';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeAboutComponent } from './components/home/about/home-about.component';
 import { HomeServicesComponent } from './components/home/services/home-services.component';
+import { HomePortfolioComponent } from './components/home/portfolio/home-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeServicesComponent } from './components/home/services/home-services.
     components.NavbarMenuComponent,
     CarouselComponent,
     HomeAboutComponent,
-    HomeServicesComponent
+    HomeServicesComponent,
+    HomePortfolioComponent
   ],
   imports: [
     BrowserModule,
