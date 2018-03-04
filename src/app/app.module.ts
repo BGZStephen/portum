@@ -12,6 +12,7 @@ import { HomePortfolioComponent } from './components/home/portfolio/home-portfol
 import { HomeTestimonialsComponent } from './components/home/testimonials/home-testimonials.component';
 import { HomeExpertiseComponent } from './components/home/expertise/home-expertise.component';
 import { HomeTeamComponent } from './components/home/team/home-team.component';
+import { HomePricingComponent } from './components/home/pricing/home-pricing.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeTeamComponent } from './components/home/team/home-team.component';
     HomePortfolioComponent,
     HomeTestimonialsComponent,
     HomeExpertiseComponent,
-    HomeTeamComponent
+    HomeTeamComponent,
+    HomePricingComponent
   ],
   imports: [
     BrowserModule,

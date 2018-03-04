@@ -1,0 +1,143 @@
+#home-pricing {
+  .section-container {
+    text-align: center;
+  }
+
+  .prices-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 45px auto 0 auto;
+    max-width: 1100px;
+  }
+
+  .price-container {
+    padding: 20px;
+  }
+
+  .price {
+    box-shadow: 0px 2px 10px #EEE,
+                0px -2px 10px #EEE;
+    padding: 30px 0 20px 0;
+    position: relative;
+    text-align: center;
+    transition: 0.1s ease transform;
+    height: auto;
+
+    .price-header {
+      color: $primary-blue;
+      margin-bottom: 10px;
+
+      strong {
+        font-size: 4.6em;
+      }
+
+      .currency {
+        font-size: 1.8em;
+        font-weight: 600;
+        position: relative;
+        top: -35px;
+        left: -10px;
+      }
+
+      .frequency {
+        font-size: 1.4em;
+        font-weight: 600;
+        position: relative;
+        left: 5px;
+        top: 5px;
+      }
+    }
+
+    .price-banner {
+      background: $primary-blue;
+      color: white;
+      margin-bottom: 30px;
+      padding: 15px 30px;
+
+      .banner-title {
+        letter-spacing: 0.1em;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: -2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .price-features {
+      ul {
+        list-style: none;
+
+        li {
+          letter-spacing: 0.05em;
+          color: #999;
+          margin-left: 20px;
+          text-align: left;
+
+          strong {
+            color: #555;
+          }
+
+          @media(min-width: $screen-lg) {
+            margin-left: 28%;
+          }
+        }
+      }
+    }
+
+    .purchase-container {
+      padding: 20px;
+      padding-bottom: 0;
+
+      .price-button {
+        border: none;
+        border-radius: 25px;
+        color: white;
+        cursor: pointer;
+        font-size: 1.1em;
+        margin: 0 auto;
+        padding: 10px 35px;
+        background: $primary-blue;
+
+        &:hover {
+          background: $primary-red;
+        }
+
+        @media(min-width: $screen-md) {
+          padding: 10px 45px;
+        }
+      }
+
+      @media(min-width: $screen-md) {
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+
+
+    &:hover {
+      transform: scale(1.025);
+
+      .price-banner {
+        background: $primary-red;
+      }
+
+      .price-features {
+        ul {
+          li {
+            strong {
+              color: $primary-red;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: $screen-md) {
+      height: 550px;
+    }
+  }
+}
