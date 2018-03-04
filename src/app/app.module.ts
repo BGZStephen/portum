@@ -11,6 +11,7 @@ import { HomeServicesComponent } from './components/home/services/home-services.
 import { HomePortfolioComponent } from './components/home/portfolio/home-portfolio.component';
 import { HomeTestimonialsComponent } from './components/home/testimonials/home-testimonials.component';
 import { HomeExpertiseComponent } from './components/home/expertise/home-expertise.component';
+import { HomeTeamComponent } from './components/home/team/home-team.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeExpertiseComponent } from './components/home/expertise/home-experti
     HomeServicesComponent,
     HomePortfolioComponent,
     HomeTestimonialsComponent,
-    HomeExpertiseComponent
+    HomeExpertiseComponent,
+    HomeTeamComponent
   ],
   imports: [
     BrowserModule,

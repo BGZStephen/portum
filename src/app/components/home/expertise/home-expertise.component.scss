@@ -5,12 +5,12 @@
       max-width: 1100px;
 
       .section-text {
-        margin-bottom: 20px;
+        margin: 0;
       }
 
       .expertise-header {
         font-size: 1.2em;
-        margin-bottom: 15px;
+        margin: 30px 0 5px 0;
 
         @media(min-width: $screen-md) {
           font-size: 1.6em;
@@ -19,7 +19,6 @@
 
       .expertise-text {
         COLOR: #777;
-        margin-bottom: 25px;
       }
 
       .image-container {
