@@ -1,4 +1,12 @@
 export { ViewWrapperComponent } from './view-wrapper/view-wrapper.component';
 export { HomeViewComponent } from './home/view/home-view.component';
+export { HomeAboutComponent } from './home/about/home-about.component';
+export { HomeServicesComponent } from './home/services/home-services.component';
+export { HomePortfolioComponent } from './home/portfolio/home-portfolio.component';
+export { HomeTestimonialsComponent } from './home/testimonials/home-testimonials.component';
+export { HomeExpertiseComponent } from './home/expertise/home-expertise.component';
+export { HomeTeamComponent } from './home/team/home-team.component';
+export { HomePricingComponent } from './home/pricing/home-pricing.component';
 export { NavbarViewComponent } from './navbar/view/navbar-view.component';
 export { NavbarMenuComponent } from './navbar/menu/navbar-menu.component';
+export { CarouselComponent } from './carousel/carousel.component';
