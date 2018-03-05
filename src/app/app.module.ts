@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 
 import * as components from 'app/components/components-barrel';
+import { MetaSidebarComponent } from './components/meta/sidebar/meta-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import * as components from 'app/components/components-barrel';
     components.HomePricingComponent,
     components.FooterComponent,
     components.BlogListViewComponent,
-    components.BlogPostViewComponent
+    components.BlogPostViewComponent,
+    MetaSidebarComponent
   ],
   imports: [
     BrowserModule,
