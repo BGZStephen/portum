@@ -1,4 +1,5 @@
 export { ViewWrapperComponent } from './view-wrapper/view-wrapper.component';
+export { FooterComponent } from './footer/footer.component';
 export { HomeViewComponent } from './home/view/home-view.component';
 export { HomeAboutComponent } from './home/about/home-about.component';
 export { HomeServicesComponent } from './home/services/home-services.component';
@@ -10,3 +11,5 @@ export { HomePricingComponent } from './home/pricing/home-pricing.component';
 export { NavbarViewComponent } from './navbar/view/navbar-view.component';
 export { NavbarMenuComponent } from './navbar/menu/navbar-menu.component';
 export { CarouselComponent } from './carousel/carousel.component';
+export { BlogListViewComponent } from './blog/list-view/blog-list-view.component';
+export { BlogPostViewComponent } from './blog/post-view/blog-post-view/blog-post-view.component';

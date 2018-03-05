@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 
 import * as components from 'app/components/components-barrel';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
     components.HomeExpertiseComponent,
     components.HomeTeamComponent,
     components.HomePricingComponent,
-    FooterComponent
+    components.FooterComponent,
+    components.BlogListViewComponent,
+    components.BlogPostViewComponent
   ],
   imports: [
     BrowserModule,
