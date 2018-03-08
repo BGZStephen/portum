@@ -12,4 +12,5 @@ export { NavbarViewComponent } from './navbar/view/navbar-view.component';
 export { NavbarMenuComponent } from './navbar/menu/navbar-menu.component';
 export { CarouselComponent } from './carousel/carousel.component';
 export { BlogListViewComponent } from './blog/list-view/blog-list-view.component';
-export { BlogPostViewComponent } from './blog/post-view/blog-post-view/blog-post-view.component';
+export { BlogPostViewComponent } from './blog/post-view/blog-post-view.component';
+export { MetaSidebarComponent } from './meta/sidebar/meta-sidebar.component';
