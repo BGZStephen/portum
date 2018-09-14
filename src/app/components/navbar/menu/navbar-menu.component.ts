@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-menu',
@@ -8,7 +9,9 @@ export class NavbarMenuComponent implements OnInit {
 
   menuVisible: boolean = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -39,4 +42,13 @@ export class NavbarMenuComponent implements OnInit {
     }
   }
 
+  goTo(id) {
+    const element = document.getElementById(id)
+
+    if (!element) {
+      return this.router.navigate(['/'], {fragment: id});
+    }
+
+    window.scrollTo({top: element.offsetTop, behavior: 'smooth'});
+  }
 }

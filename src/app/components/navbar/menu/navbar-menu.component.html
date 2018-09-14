@@ -3,19 +3,19 @@
     <div id="logo-container">
     </div>
     <ul id="menu" [ngStyle]="menuStyle()">
-      <li class="menu-item">
+      <li class="menu-item" routerLink="/">
         <a>Home</a>
       </li>
       <li class="menu-item" routerLink="/blog">
         <a>Blog</a>
       </li>
-      <li class="menu-item">
-        <a>Out company</a>
+      <li class="menu-item" (click)="goTo('home-about')">
+        <a>Our company</a>
       </li>
-      <li class="menu-item">
+      <li class="menu-item" (click)="goTo('home-services')">
         <a>Services</a>
       </li>
-      <li class="menu-item">
+      <li class="menu-item" (click)="goTo('footer')">
         <a>Contact</a>
       </li>
     </ul>

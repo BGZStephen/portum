@@ -81,7 +81,6 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   animationCountdown = () => {
-    console.log(this.nextAnimationDelay)
     this.nextAnimationDelay -= 1000;
     if (this.nextAnimationDelay <= 0) {
       this.nextSlide();
